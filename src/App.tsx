@@ -4,8 +4,8 @@ import { Toaster, toast } from 'sonner';
 import { DashboardOverview } from '@/components/DashboardOverview';
 import { PartGrid } from '@/components/PartGrid';
 import { PartForm } from '@/components/PartForm';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Button } from '@/components/shadcn/button';
+import { Input } from '@/components/shadcn/input';
 import { partsService } from '@/services/partsService';
 import { Part, DashboardStats } from '@/types';
 

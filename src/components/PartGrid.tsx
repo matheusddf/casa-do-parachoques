@@ -7,16 +7,16 @@ import {
   CardFooter, 
   CardHeader, 
   CardTitle 
-} from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+} from '@/components/shadcn/card';
+import { Badge } from '@/components/shadcn/badge';
+import { Button } from '@/components/shadcn/button';
 import { MoreHorizontal, Edit, Trash, PackagePlus, PackageMinus, MapPin, Pencil } from 'lucide-react';
 import { 
   DropdownMenu, 
   DropdownMenuContent, 
   DropdownMenuItem, 
   DropdownMenuTrigger 
-} from '@/components/ui/dropdown-menu';
+} from '@/components/shadcn/dropdown-menu';
 import { partsService } from '@/services/partsService';
 import { toast } from 'sonner';
 import { PartDetailsDialog } from './PartDetailsDialog';
@@ -25,7 +25,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/components/shadcn/dialog";
 import { PartForm } from './PartForm';
 
 export function PartGrid({ parts, onUpdate }: { parts: Part[], onUpdate: () => void }) {
