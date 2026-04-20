@@ -110,6 +110,7 @@ function PartCard({
     }
   };
 
+  // Function to delete a part permanently - v1.0.2
   const handleDelete = async () => {
     if (!confirm('Tem certeza que deseja excluir esta peça?')) return;
     try {
