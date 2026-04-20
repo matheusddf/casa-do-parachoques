@@ -1,9 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
 
 const getEnv = (key: string) => {
+  // Prioritize directly defined variables from vite.config.ts
+  if (key === 'SUPABASE_URL' && process.env.SUPABASE_URL) return process.env.SUPABASE_URL;
+  if (key === 'SUPABASE_ANON_KEY' && process.env.SUPABASE_ANON_KEY) return process.env.SUPABASE_ANON_KEY;
+  if (key === 'GEMINI_API_KEY' && process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY;
+
   const viteKey = `VITE_${key}`;
   // Try to find the exact key, then common typos if not found
-  let val = (import.meta as any).env[viteKey] || process.env[key];
+  let val = (import.meta as any).env[viteKey] || (process.env as any)[key];
   
   if (!val && key === 'SUPABASE_ANON_KEY') {
     // Check for common typo in screenshot
