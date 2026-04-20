@@ -1,0 +1,12 @@
+{
+  "name": "Casa do Para-choques",
+  "description": "Sistema interno de gestão de estoque e dashboard para sucata automotiva (Maguin Auto Peças). Controle de peças, localização, preços e busca inteligente.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "inventory-management",
+    "dashboard",
+    "image-upload"
+  ]
+}
