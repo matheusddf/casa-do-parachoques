@@ -1,7 +1,7 @@
 {
   "name": "react-example",
-  "version": "1.0.6",
-  "sync_id": "netlify_force_v6",
+  "version": "1.0.7",
+  "sync_id": "netlify_force_v7",
   "private": true,
   "type": "module",
   "scripts": {
