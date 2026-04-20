@@ -1,21 +1,17 @@
 import { createClient } from '@supabase/supabase-js';
 
 const getEnv = (key: string) => {
-  // Prioritize directly defined variables from vite.config.ts
-  if (key === 'SUPABASE_URL' && process.env.SUPABASE_URL) return process.env.SUPABASE_URL;
-  if (key === 'SUPABASE_ANON_KEY' && process.env.SUPABASE_ANON_KEY) return process.env.SUPABASE_ANON_KEY;
-  if (key === 'GEMINI_API_KEY' && process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY;
-
-  const viteKey = `VITE_${key}`;
-  // Try to find the exact key, then common typos if not found
-  let val = (import.meta as any).env[viteKey] || (process.env as any)[key];
-  
-  if (!val && key === 'SUPABASE_ANON_KEY') {
-    // Check for common typo in screenshot
-    val = process.env['SUPABASE_ANON_KE'] || (import.meta as any).env['VITE_SUPABASE_ANON_KE'];
+  // Explicitly check for known keys to allow Vite to perform build-time replacement
+  if (key === 'SUPABASE_URL') {
+    return process.env.SUPABASE_URL || import.meta.env.VITE_SUPABASE_URL || '';
   }
-  
-  return val || '';
+  if (key === 'SUPABASE_ANON_KEY') {
+    return process.env.SUPABASE_ANON_KEY || import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+  }
+  if (key === 'GEMINI_API_KEY') {
+    return process.env.GEMINI_API_KEY || import.meta.env.VITE_GEMINI_API_KEY || '';
+  }
+  return '';
 };
 
 let supabaseUrl = getEnv('SUPABASE_URL');
