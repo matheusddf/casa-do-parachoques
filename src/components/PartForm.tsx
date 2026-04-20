@@ -3,18 +3,18 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Camera, Image as ImageIcon, Loader2, X, Sparkles } from 'lucide-react';
-import { Card, CardContent, CardFooter } from '@/components/shadcn/card';
-import { Button } from '@/components/shadcn/button';
-import { Input } from '@/components/shadcn/input';
-import { Label } from '@/components/shadcn/label';
-import { Textarea } from '@/components/shadcn/textarea';
+import { Card, CardContent, CardFooter } from '@/components/shadcn/Card';
+import { Button } from '@/components/shadcn/Button';
+import { Input } from '@/components/shadcn/Input';
+import { Label } from '@/components/shadcn/Label';
+import { Textarea } from '@/components/shadcn/Textarea';
 import { 
   Select, 
   SelectContent, 
   SelectItem, 
   SelectTrigger, 
   SelectValue 
-} from '@/components/shadcn/select';
+} from '@/components/shadcn/Select';
 import { partsService } from '@/services/partsService';
 import { geminiService } from '@/services/geminiService';
 import { toast } from 'sonner';

@@ -16,7 +16,7 @@ import {
   DollarSign,
   Clock
 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/shadcn/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/shadcn/Card';
 import { DashboardStats } from '@/types';
 import { formatCurrency } from '@/lib/utils'; 
 

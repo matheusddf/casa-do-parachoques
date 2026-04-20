@@ -5,18 +5,18 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/shadcn/dialog";
+} from "@/components/shadcn/Dialog";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/shadcn/carousel";
-import { Badge } from '@/components/shadcn/badge';
+} from "@/components/shadcn/Carousel";
+import { Badge } from '@/components/shadcn/Badge';
 import { formatCurrency } from '@/lib/utils';
 import { MapPin, Info, ArrowRightLeft } from 'lucide-react';
-import { Separator } from '@/components/shadcn/separator';
+import { Separator } from '@/components/shadcn/Separator';
 
 export function PartDetailsDialog({ part, open, onOpenChange }: { part: Part | null, open: boolean, onOpenChange: (open: boolean) => void }) {
   if (!part) return null;
