@@ -210,24 +210,43 @@ function PartCard({
         </div>
       </CardContent>
       
-      <CardFooter className="p-4 pt-4 grid grid-cols-2 gap-2 border-t border-zinc-100 dark:border-zinc-800 mt-4">
+      <CardFooter className="p-4 pt-4 flex flex-col gap-3 border-t border-zinc-100 dark:border-zinc-800 mt-4">
+        <div className="grid grid-cols-2 gap-2 w-full">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="w-full text-xs bg-green-50 hover:bg-green-100 dark:bg-green-950/20 dark:hover:bg-green-900/30 border-green-200 dark:border-green-800" 
+            onClick={(e) => {
+              e.stopPropagation();
+              handleStockUpdate(1);
+            }}
+            disabled={isUpdating}
+          >
+            <PackagePlus className="mr-1.5 h-3.5 w-3.5 text-green-600" /> +1 Entrada
+          </Button>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="w-full text-xs bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/20 dark:hover:bg-amber-900/30 border-amber-200 dark:border-amber-800"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleStockUpdate(-1);
+            }}
+            disabled={isUpdating || part.quantity <= 0}
+          >
+            <PackageMinus className="mr-1.5 h-3.5 w-3.5 text-amber-600" /> -1 Saída
+          </Button>
+        </div>
         <Button 
-          variant="outline" 
-          size="sm" 
-          className="w-full text-xs" 
-          onClick={() => handleStockUpdate(1)}
-          disabled={isUpdating}
-        >
-          <PackagePlus className="mr-1.5 h-3.5 w-3.5" /> Entrada
-        </Button>
-        <Button 
-          variant="outline" 
+          variant="destructive" 
           size="sm" 
           className="w-full text-xs"
-          onClick={() => handleStockUpdate(-1)}
-          disabled={isUpdating || part.quantity <= 0}
+          onClick={(e) => {
+            e.stopPropagation();
+            handleDelete();
+          }}
         >
-          <PackageMinus className="mr-1.5 h-3.5 w-3.5" /> Saída
+          <Trash className="mr-1.5 h-3.5 w-3.5" /> Apagar Peça Permanentemente
         </Button>
       </CardFooter>
     </Card>
