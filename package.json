@@ -1,13 +1,13 @@
 {
   "name": "react-example",
-  "version": "1.0.5",
-  "sync_id": "netlify_force_v5",
+  "version": "1.0.6",
+  "sync_id": "netlify_force_v6",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
-    "netlify-build": "npm run clean && vite build",
+    "netlify-build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"
