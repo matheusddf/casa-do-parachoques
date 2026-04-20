@@ -1,3 +1,4 @@
+// Scrapyard Dashboard - v1.0.1 - Fixed case-sensitivity for Netlify deploy
 import React, { useState, useEffect } from 'react';
 import { LayoutDashboard, Package, PlusCircle, Search, Settings, Loader2 } from 'lucide-react';
 import { Toaster, toast } from 'sonner';
